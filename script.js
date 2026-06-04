@@ -1,51 +1,23 @@
 const canvas = document.getElementById("confetti-canvas");
 const candles = Array.from(document.querySelectorAll(".candle"));
 const finale = document.getElementById("finale");
-const imageModal = document.getElementById("image-modal");
-const imageModalPhoto = document.getElementById("image-modal-photo");
 const animalZoomButtons = Array.from(document.querySelectorAll(".animal-zoom-button"));
-const imageModalCloseButtons = Array.from(document.querySelectorAll(".image-modal-close, .image-modal-backdrop"));
-
-function openImageModal(image) {
-  if (!imageModal || !imageModalPhoto) {
-    return;
-  }
-
-  imageModalPhoto.src = image.src;
-  imageModalPhoto.alt = image.alt;
-  imageModal.classList.remove("hidden");
-  imageModal.setAttribute("aria-hidden", "false");
-}
-
-function closeImageModal() {
-  if (!imageModal || !imageModalPhoto) {
-    return;
-  }
-
-  imageModal.classList.add("hidden");
-  imageModal.setAttribute("aria-hidden", "true");
-  imageModalPhoto.src = "";
-  imageModalPhoto.alt = "";
-}
 
 animalZoomButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const image = button.querySelector("img");
+    const shouldGrow = !button.classList.contains("is-enlarged");
 
-    if (image) {
-      openImageModal(image);
+    animalZoomButtons.forEach((item) => {
+      item.classList.remove("is-enlarged");
+      item.setAttribute("aria-pressed", "false");
+    });
+
+    if (shouldGrow) {
+      button.classList.add("is-enlarged");
+      button.setAttribute("aria-pressed", "true");
+      button.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
   });
-});
-
-imageModalCloseButtons.forEach((button) => {
-  button.addEventListener("click", closeImageModal);
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeImageModal();
-  }
 });
 
 if (canvas) {

@@ -420,6 +420,7 @@ h3 {
   border: 0;
   background: transparent;
   cursor: zoom-in;
+  transition: flex-basis 0.25s ease;
 }
 
 .animal-zoom-button:hover .photo-animal,
@@ -434,6 +435,18 @@ h3 {
   border-radius: 28px;
 }
 
+.animal-zoom-button.is-enlarged {
+  flex: 1 1 100%;
+  cursor: zoom-out;
+}
+
+.animal-zoom-button.is-enlarged .finale-animal {
+  width: min(78vw, 430px);
+  max-width: 430px;
+  transform: scale(1);
+  box-shadow: 0 22px 42px rgba(124, 74, 95, 0.3);
+}
+
 .finale-animal {
   display: block;
   max-width: 200px;
@@ -443,64 +456,6 @@ h3 {
 
 .finale-capybara {
   width: min(42vw, 210px);
-}
-
-.image-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-}
-
-.image-modal.hidden {
-  display: none;
-}
-
-.image-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  border: 0;
-  background: rgba(58, 30, 45, 0.72);
-  backdrop-filter: blur(8px);
-  cursor: zoom-out;
-}
-
-.image-modal-content {
-  position: relative;
-  z-index: 1;
-  width: min(92vw, 720px);
-  max-height: 88vh;
-  animation: popIn 0.22s ease;
-}
-
-.image-modal-content img {
-  display: block;
-  width: 100%;
-  max-height: 88vh;
-  object-fit: contain;
-  border-radius: 28px;
-  border: 5px solid rgba(255, 255, 255, 0.9);
-  background: #fff;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
-}
-
-.image-modal-close {
-  position: absolute;
-  top: -12px;
-  right: -10px;
-  width: 42px;
-  height: 42px;
-  border: 0;
-  border-radius: 999px;
-  color: white;
-  background: var(--accent-dark);
-  font-size: 1.4rem;
-  font-weight: 900;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.24);
 }
 
 @keyframes floatUp {
