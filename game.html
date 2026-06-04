@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-party page-game">
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <div class="balloon-layer" aria-hidden="true">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-1">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-2">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-3">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-4">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-5">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-6">
+  </div>
+
+  <main class="page-shell">
+    <section class="screen screen--active game-screen">
+      <div class="panel game-panel">
+        <p class="eyebrow">Geburtstags-Aufgabe</p>
+        <h2>Alle Kerzen auspusten</h2>
+        <p class="instruction">(Auf die Kerzen klicken)</p>
+
+        <div class="interactive-cake" aria-label="Geburtstagskuchen mit drei Kerzen">
+          <div class="candles-row">
+            <button class="candle is-lit" data-candle="1" aria-label="Kerze 1 auspusten">
+              <span class="flame"></span>
+              <span class="wax"></span>
+            </button>
+            <button class="candle is-lit" data-candle="2" aria-label="Kerze 2 auspusten">
+              <span class="flame"></span>
+              <span class="wax"></span>
+            </button>
+            <button class="candle is-lit" data-candle="3" aria-label="Kerze 3 auspusten">
+              <span class="flame"></span>
+              <span class="wax"></span>
+            </button>
+          </div>
+          <div class="cake-top cake-top-large"></div>
+          <div class="cake-base cake-base-large"></div>
+          <div class="cake-plate cake-plate-large"></div>
+        </div>
+
+        <div class="finale hidden" id="finale">
+          <h3>Alles Gute zum Geburtstag</h3>
+          <div class="finale-animals">
+            <img src="assets/images/british-shorthair-cat.jpg" alt="Britisch Kurzhaar Katze" class="finale-animal finale-cat photo-animal">
+            <img src="assets/images/capybara-photo.jpg" alt="Capybara" class="finale-animal finale-capybara photo-animal">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

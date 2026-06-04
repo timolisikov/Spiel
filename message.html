@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-party">
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <div class="balloon-layer" aria-hidden="true">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-1">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-2">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-3">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-4">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-5">
+    <img src="assets/images/balloon.svg" alt="" class="balloon balloon-6">
+  </div>
+
+  <main class="page-shell">
+    <section class="screen screen--active message-screen">
+      <div class="panel popup-card">
+        <p class="eyebrow">Für Mama</p>
+        <h2>Liebe Mama</h2>
+        <p class="message-text">
+          Ich wünsche dir alles Gute zum Geburtstag, ich liebe dich und wünsche dir nur Glück.
+        </p>
+
+        <div class="celebration-row">
+          <div class="cake-display" aria-hidden="true">
+            <div class="cake-candles">
+              <span class="mini-candle"></span>
+              <span class="mini-candle"></span>
+              <span class="mini-candle"></span>
+            </div>
+            <div class="cake-top"></div>
+            <div class="cake-base"></div>
+            <div class="cake-plate"></div>
+          </div>
+
+          <div class="cat-guide">
+            <img src="assets/images/british-shorthair-cat.jpg" alt="Britisch Kurzhaar Katze" class="cat-image photo-animal">
+            <div class="cat-arrow">===></div>
+            <a class="main-button alt-button" href="game.html">Weiter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
